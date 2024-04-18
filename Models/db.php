@@ -1,13 +1,15 @@
 <?php
-include_once __DIR__ . ".Production.php";
+include_once __DIR__ . "./Production.php";
 
 //Creates New Items to Production :
-// 1.
+$productionList=
+    [
 
-$matrix= new Production('Matrix', 'English', rand(1,10));
-var_dump($matrix);
-/* echo $matrix->getTitle(); */
-//2.
-$starWars= new Production('Star Wars', 'Italian', rand(1,10));
-var_dump($starWars);
-/* echo $starWars->getTitle(); */
+    new Production('Matrix', 'English', rand(1,10)),
+    new Production('Star Wars', 'Italian', rand(1,10)),
+    new Production('Terminator', 'English', rand(1,10)),
+    new Production('Jackie Chan', 'Chinese', rand(1,10)),
+    new Production('Interstellar', 'English', rand(1,10)),
+    ]
+
+?>

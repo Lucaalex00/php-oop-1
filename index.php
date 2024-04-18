@@ -34,37 +34,50 @@ require_once __DIR__ . './Models/db.php';
             box-sizing: border-box;
         }
         body{
-            background-color:#cecece;
+            background-color: #cecece;
         }
-        .info_production{
-            display: flex;
-            justify-content:space-between;
-            gap:2rem;
-            margin: 1rem 0;
-            width:20%;
+        ul{
+            display:flex;
+            flex-direction:column;
+            gap:1rem;
         }
-        h2{
-            color:darkgreen;
-        }
-        h4{
-            color:darkred
+        .production_item{
+            display:flex;
+            flex-direction:column;
+            gap:1rem;
+            text-align:center;
+            border:2px solid black;
+            box-shadow: 2px 2px 2px black;
+            width:50%;
+            margin:auto;
+            padding:1rem;
+            transition:1000ms;
+            >p{
+                transition:1000ms;
+            }
+            &:hover{
+                background-color:black;
+                >p{
+                    color:white;
+                }
+            }
+            >h2{
+                color:darkred;
+            }
         }
     </style>
 </head>
 <body>
-    <h2>
-        <?= "Title: " . $starWars->getTitle() ?>
-    </h2>
-    <div class="info_production">
-        <h4><?= "Lang: " . $starWars->getLang() ?></h4>
-        <h4><?= "Vote: " . $starWars->getVote() ?></h4>
-    </div>
-    <h2>
-        <?= "Title: " . $matrix->getTitle() ?>
-    </h2>
-    <div class="info_production">
-        <h4><?= "Lang: " . $matrix->getLang() ?></h4>
-        <h4><?= "Vote: " . $matrix->getVote() ?></h4>
-    </div>
+   <div class="container">
+    <ul>
+        <?php foreach ($productionList as $prodItem): ?>
+        <li class="production_item">
+            <h2><?php echo $prodItem->getTitle(); ?></h2>
+            <p>Language: <?php echo $prodItem->getLang(); ?></p>
+            <p>Vote: <?php echo $prodItem->getVote(); ?></p>
+        </li>
+        <?php endforeach;?>
+    </ul>
+   </div>
 </body>
 </html>
