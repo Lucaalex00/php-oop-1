@@ -22,7 +22,7 @@ class Production{
     public $vote;
 
     //Constructor
-    public function __constructor($title, $lang, $vote){
+    public function __construct($title, $lang, $vote){
         $this->title=$title;
         $this->lang=$lang;
         $this->vote=$vote;
@@ -40,9 +40,63 @@ class Production{
     }
 };
 
+//Creates New Items to Production :
+// 1.
 
-
-var_dump($title);
-
+$matrix= new Production('Matrix', 'English', rand(1,10));
+var_dump($matrix);
+/* echo $matrix->getTitle(); */
+//2.
+$starWars= new Production('Star Wars', 'Italian', rand(1,10));
+var_dump($starWars);
+/* echo $starWars->getTitle(); */
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <title>Production PHP</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:#cecece;
+        }
+        .info_production{
+            display: flex;
+            justify-content:space-between;
+            gap:2rem;
+            margin: 1rem 0;
+            width:20%;
+        }
+        h2{
+            color:darkgreen;
+        }
+        h4{
+            color:darkred
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        <?= "Title: " . $starWars->getTitle() ?>
+    </h2>
+    <div class="info_production">
+        <h4><?= "Lang: " . $starWars->getLang() ?></h4>
+        <h4><?= "Vote: " . $starWars->getVote() ?></h4>
+    </div>
+    <h2>
+        <?= "Title: " . $matrix->getTitle() ?>
+    </h2>
+    <div class="info_production">
+        <h4><?= "Lang: " . $matrix->getLang() ?></h4>
+        <h4><?= "Vote: " . $matrix->getVote() ?></h4>
+    </div>
+</body>
+</html>
