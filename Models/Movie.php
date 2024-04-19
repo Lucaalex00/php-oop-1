@@ -18,5 +18,11 @@ class Movie extends Production {
     public function getValue($val, $property){
         return $this->$val = $property;
     }
+    public function getProfits() {
+        return $this->profits;
+    }
+    public function getDuration() {
+        return $this->duration;
+    }
 }
 

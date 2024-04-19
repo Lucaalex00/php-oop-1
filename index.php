@@ -17,7 +17,10 @@ Aggiornate le informazioni stampate a schermo con il genere.
 */
 
 require_once __DIR__ . './Models/Production.php';
+require_once __DIR__ . './Models/Movie.php';
+require_once __DIR__ . './Models/TVserie.php';
 require_once __DIR__ . './Models/db.php';
+
 
 ?>
 
@@ -76,6 +79,14 @@ require_once __DIR__ . './Models/db.php';
             <p>Language: <?php echo $prodItem->getLang(); ?></p>
             <p>Vote: <?php echo $prodItem->getVote(); ?></p>
             <p>Genres: <?php echo $prodItem->getGenres(); ?></p>
+            <?php if ($prodItem instanceof Movie): ?>
+                <p>Profits: <?php echo $prodItem->getProfits(); ?> €</p>
+                <p>Duration: <?php echo $prodItem->getDuration(); ?> Minutes</p>
+            <?php endif; ?>
+            <?php if ($prodItem instanceof TVserie): ?>
+                <p>Season Numbers : <?php echo $prodItem->getNumSeasons(); ?> </p>
+            <?php endif; ?>
+            
         </li>
         <?php endforeach;?>
     </ul>

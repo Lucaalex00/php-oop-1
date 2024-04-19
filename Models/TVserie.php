@@ -17,5 +17,8 @@ class TVserie extends Production {
     public function getValue($val, $property){
         return $this->$val = $property;
     }
+    public function getNumSeasons() {
+        return $this->numSeasons;
+    }
 }
 
