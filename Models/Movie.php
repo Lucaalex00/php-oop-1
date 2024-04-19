@@ -1,13 +1,14 @@
 <?php
 require_once __DIR__ . './Production.php';
-class Movie extends Production{
-    public $profits;
-    public $duration;
+class Movie extends Production {
+    private $profits;
+    private $duration;
 
-    //constructor
-    public function __construct(int $profits, int $duration){
-        $this->profits=$profits;
-        $this->duration=$duration;
+    //CONSTRUCT 
+    public function __construct($title, $lang, $vote, $genres, $profits, $duration) {
+        parent::__construct($title, $lang, $vote, $genres);
+        $this->profits = $profits;
+        $this->duration = $duration;
     }
     //SETTERS
     public function setValue($property, $val){
