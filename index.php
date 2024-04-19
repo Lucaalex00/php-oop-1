@@ -75,6 +75,7 @@ require_once __DIR__ . './Models/db.php';
             <h2><?php echo $prodItem->getTitle(); ?></h2>
             <p>Language: <?php echo $prodItem->getLang(); ?></p>
             <p>Vote: <?php echo $prodItem->getVote(); ?></p>
+            <p>Genres: <?php echo $prodItem->getGenres(); ?></p>
         </li>
         <?php endforeach;?>
     </ul>

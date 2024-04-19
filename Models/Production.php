@@ -1,24 +1,30 @@
 <?php
-class Production{
+class Production {
     public $title;
     public $lang;
     public $vote;
+    public $genres;
 
-    //Constructor
-    public function __construct($title, $lang, $vote){
-        $this->title=$title;
-        $this->lang=$lang;
-        $this->vote=$vote;
+    public function __construct($title, $lang, $vote, $genres) {
+        $this->title = $title;
+        $this->lang = $lang;
+        $this->vote = $vote;
+        $this->genres = $genres;
     }
 
-    //GET PROPERTIES
-    public function getTitle(){
+    public function getTitle() {
         return $this->title;
     }
-     public function getLang(){
+
+    public function getLang() {
         return $this->lang;
     }
-     public function getVote(){
+
+    public function getVote() {
         return $this->vote;
     }
-};
+
+    public function getGenres() {
+        return $this->genres;
+    }
+}
